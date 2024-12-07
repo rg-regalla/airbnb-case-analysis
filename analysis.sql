@@ -21,10 +21,6 @@ limit 5;
 
 -- Guest Ratings
 
--- select * from listings 
--- where id in 
--- (select id from listings group by id having count(id)>1)
--- order by id;
 
 -- 1. Average reviews across all listings
 select round(sum(number_of_reviews*review_scores_rating)/sum(number_of_reviews),2) 
@@ -109,16 +105,6 @@ and extract(month from date) = 1)
 group by listing_id
 order by round(sum(booked)*1.0/count(available)*100,2) desc, listing_id
 limit 5;
-
--- select listing_id, round(sum(booked)*1.0/count(available)*100,2) as occupancy_rate,
--- case 
--- 	when available  = false then 1
--- 	else 0
--- end as booked
--- from calendars
--- where extract(year from date) = 2024
--- and extract(month from date) = 1
--- group by listing_id
 
 --3. Listings without booking in Jan 2024
 
