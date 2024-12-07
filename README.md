@@ -67,6 +67,11 @@ Records guest feedback:
 
 ---
 
+### Dataset relations
+
+![Database Schema](./schema-image.png)
+
+
 ## Key Features of the Repository
 - **Exploratory Data Analysis (EDA):**
   - Analyzing booking patterns, seasonal trends, and occupancy rates.
