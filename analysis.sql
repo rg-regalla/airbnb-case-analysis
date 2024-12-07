@@ -27,12 +27,15 @@ select round(sum(number_of_reviews*review_scores_rating)/sum(number_of_reviews),
 as weighted_avg_review_score
 from listings;
 
--- 2. Top 10 listings by rating
-select id, name, review_scores_rating
+-- 2. Top 20 listings by number of reviews
+
+select round(avg(review_scores_rating),2) from listings;
+
+select id, name, number_of_reviews, review_scores_rating
 from listings 
 where review_scores_rating is not null
-order by review_scores_rating desc
-limit 10;
+order by number_of_reviews desc
+limit 20;
 
 -- 3. Number of listings with an average review score < 4
 select count(*) from
