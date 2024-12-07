@@ -37,7 +37,8 @@ where review_scores_rating is not null
 order by number_of_reviews desc
 limit 20;
 
-select property_type, sum(number_of_reviews) as total_review_count
+-- Number of reviews by property type
+select property_type, count(id), sum(number_of_reviews) as total_review_count
 from listings
 group by property_type
 order by total_review_count desc;
