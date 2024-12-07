@@ -30,3 +30,9 @@
 
 ---
 
+### Property types with less number of reviews
+
+
+
+---
+
