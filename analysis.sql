@@ -37,6 +37,11 @@ where review_scores_rating is not null
 order by number_of_reviews desc
 limit 20;
 
+select property_type, sum(number_of_reviews) as total_review_count
+from listings
+group by property_type
+order by total_review_count desc;
+
 -- 3. Number of listings with an average review score < 4
 select count(*) from
 (select round(sum(number_of_reviews*review_scores_rating)/sum(number_of_reviews),2)
